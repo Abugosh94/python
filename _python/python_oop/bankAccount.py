@@ -7,11 +7,13 @@ class BankAccount:
     #Add a deposit method to the BankAccount class
 	def deposit(self, amount):
 		self.balance += amount
+		return self
 
     #Add a withdraw method to the BankAccount class	
 	def withdraw(self, amount):
 		if(self.balance - amount > 0):
 			self.balance -= amount
+			return self
 		else:
 			return "Insufficient funds"
 
@@ -22,6 +24,7 @@ class BankAccount:
     #Add a yield_interest method to the BankAccount class
 	def yield_interest(self):
 		self.balance *= self.int_rate
+		return self
 
 #Create 2 accounts
 John = BankAccount(0.03, 6590)

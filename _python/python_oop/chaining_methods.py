@@ -8,22 +8,26 @@ class User:
 
     def deposit(self, amount):
         self.balance += amount
+        return self
 
     #Add a make_withdrawal method to the User class
     def make_withdrawl(self, amount):
         if(self.balance - amount > 0):
             self.balance -= amount
+            return self
         else:
             return "Insufficient funds"
 
     #Add a display_user_balance method to the User class
     def display_user_balance(self):
         print(f"User: {self.name}, Balance: ${self.balance}")
+        return self
 
     def transfer_money(self, other_user, amount):
         if(self.balance - amount > 0):
             self.balance -= amount
             other_user.balance += amount
+            return self
         else:
             return "Insufficient funds"
 
