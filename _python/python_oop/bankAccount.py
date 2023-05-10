@@ -30,7 +30,5 @@ class BankAccount:
 John = BankAccount(0.03, 6590)
 Megan = BankAccount(0.05, 8452)
 
-John.display_account_info
-
-John.deposit(340).deposit(123).deposit(234).withdraw(490)
-Megan.deposit(750).deposit(369).withdraw(420).withdraw(1337).withdraw(257).withdraw(666)
+John.deposit(340).deposit(123).deposit(234).withdraw(490).display_account_info()
+Megan.deposit(750).deposit(369).withdraw(420).withdraw(1337).withdraw(257).withdraw(666).display_account_info()
