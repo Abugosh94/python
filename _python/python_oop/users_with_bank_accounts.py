@@ -1,16 +1,17 @@
 #defining user class
 class User:
-    #Create a file with the User class, including the __init__ and make_deposit methods
+    #Update the User class __init__ method
     def __init__(self, name, email):
         self.name = name
         self.email = email
         self.account = {"Savings": BankAccount(int_rate=0.03, balance =0), "Current": BankAccount(int_rate=0.03, balance =0)}
 
+    #Update the User class make_deposit method
     def make_deposit(self, amount, account_type):
         self.account[account_type].deposit(amount)
         return self
 
-    #Add a make_withdrawal method to the User class
+    #Update the User class make_withdrawal method
     def make_withdrawl(self, amount, account_type):
         if(self.account[account_type].balance - amount > 0):
             self.account[account_type].withdraw(amount)
@@ -18,7 +19,7 @@ class User:
         else:
             return "Insufficient funds"
 
-    #Add a display_user_balance method to the User class
+    #Update the User class display_user_balance method
     def display_user_balance(self):
         print(f"User: {self.name}, Savings Balance: ${self.account['Savings'].balance}, Current Balance: ${self.account['Current'].balance}")
         return self
