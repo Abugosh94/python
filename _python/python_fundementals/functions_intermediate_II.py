@@ -19,8 +19,8 @@ z[0]["y"]= 30
 #Create a function iterateDictionary(some_list) that, given a list of dictionaries, the function loops through each dictionary in the list and prints each key and the associated value
 
 def iterateDictionary(x):
-    for i in range(len(x)):
-        print(f"first_name - {x[i]['first_name']}, last_name - {x[i]['last_name']}")
+    for i in x:
+        print(f"first_name - {i['first_name']}, last_name - {i['last_name']}")
 
 students = [
     {'first_name':  'Michael', 'last_name' : 'Jordan'},
@@ -34,9 +34,9 @@ iterateDictionary(students)
 #Get Values From a List of Dictionaries
 #Create a function iterateDictionary2(key_name, some_list) that, given a list of dictionaries and a key name, the function prints the value stored in that key for each dictionary
 
-def iterateDictionary2(x, y):
-    for i in range(len(y)):
-        print(f"{y[i][x]}")
+def iterateDictionary2(key, list):
+    for i in list:
+        print(f"{i[key]}")
 
 iterateDictionary2('first_name', students)
 iterateDictionary2('last_name', students)

@@ -97,5 +97,12 @@ def reverse_list(x):
     x.reverse()
     return x
 
+def reverse_list2(arr):
+    for i in range(len(arr)//2):
+        temp = arr[i]
+        arr[i] = arr[len(arr)-i-1]
+        arr[len(arr)-i-1] = temp
+    return arr
+
 #testing print statement    
-#print(reverse_list([37,2,1,-9]))
+print(reverse_list2([37,2,1,-9]))
