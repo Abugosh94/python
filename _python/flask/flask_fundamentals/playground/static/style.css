@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: auto;
+    margin-top: 5em;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+div{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 1em;
+}
+
+.box{
+    background-color: lightblue;
+    border: 1px solid black;
+    width: 200px;
+    height: 200px;
+}
+
+.breakpoint{
+        content: "\a";
+        white-space: pre;  
+}
