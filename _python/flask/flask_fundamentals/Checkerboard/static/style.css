@@ -3,6 +3,12 @@
     padding: 0;
 }
 
+.board{
+    display: inline-block;
+    border-right: 3px solid whitesmoke;
+    border-bottom: 3px solid whitesmoke;
+}
+
 .row{
     display: flex;
     flex-wrap: wrap;
