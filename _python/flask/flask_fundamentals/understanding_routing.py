@@ -25,6 +25,7 @@ def hi(name):
 def repeat(number, string):
     return (f"{string} "*(number))
 
+#SENSEI BONUS: Ensure that if the user types in any route other than the ones specified, they receive an error message saying "Sorry! No response. Try again."
 @app.errorhandler(404)
 def page_not_found(e):
     return "Sorry! No response. Try again."
