@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Have the css in a separate stylesheet and link this to the template-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Checkerboard</title>
+</head>
+<body>
+        {% for i in range(x) %}
+        <div class="row">
+            {% for j in range(y) %}
+                {% if colormsg1 %}
+                    {% if (i+j)%2==0 %}
+                    <div class="box" style='background-color: {{colormsg1}}'></div>
+                    {% else %}
+                    <div class="box" style='background-color: {{colormsg2}}'></div>
+                    {% endif %}
+                {% else %}
+                    {% if (i+j)%2==0 %}
+                    <div class="box"></div>
+                    {% else %}
+                    <div class="box2"></div>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </div>    
+        {% endfor %}
+</body>
+</html>
