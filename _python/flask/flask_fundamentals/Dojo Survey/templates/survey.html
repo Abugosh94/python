@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--NINJA BONUS: Use a framework to format the table-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Dojo Survey</title>
+</head>
+<body>
+    <div class="container">
+        <form action='/result' method='post'>
+            <div class="mb-3">
+                <label class="form-label">Your Name:</label> <input type='text' name='name' class="form-control">
+            </div>
+            <div class="mb-3 ">
+                <label class="form-label" name="name">Dojo Location:</label>
+                <select id="location" name="location" class="form-select">
+                    <option value="San Jose">San Jose</option>
+                    <option value="Ramallah">Ramallah</option>
+                    <option value="New York">New York</option>
+                    <option value="London">London</option>
+                </select>
+            </div>
+            <div class="mb-3 ">
+                <label>Favorite Language:</label>
+                <select id="language" name="language">
+                    <option value="Python">Python</option>
+                    <option value="C#">C#</option>
+                    <option value="Java">Java</option>
+                    <option value="Swift">Swift</option>
+                </select>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault1" value="Male" required>
+                <label class="form-check-label" for="flexRadioDefault1" name="gender">Male</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault1" value="Female" required>
+                <label class="form-check-label" for="flexRadioDefault1" name="gender">Female</label>
+            </div>
+            <div class="mb-3">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
+                <label class="form-check-label" for="exampleCheck1">I Am Not A Robot</label>
+            </div>
+            <div class="mb-3">
+                <input type="checkbox" class="form-check-input" id="exampleCheck2" required>
+                <label class="form-check-label" for="exampleCheck1">Defenitly Not A Robot</label>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Comment (optional):</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="comment"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" value="filldata()">Button</button>
+        </form>
+    </div>
+</body>
+</html>
