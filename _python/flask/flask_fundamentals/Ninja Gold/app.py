@@ -57,6 +57,7 @@ def guess():
         timestamp = now.strftime("%Y/%m/%d %I:%M:%S %p")
         if result == 0:
             session["activity"].insert(0, f"Entered a casino and didn't lose or make profit. ({timestamp})")
+        #because the house always wins
         elif rng%3 == 0:
             session["gold"] += result
             session["activity"].insert(0, f"Entered a casino and earned {result} gold! ({timestamp})")
