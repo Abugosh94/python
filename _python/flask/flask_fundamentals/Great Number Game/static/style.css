@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.container{
+    margin: auto;
+    margin-top: 1em;
+    padding: 1em;
+    width: 720px;
+    text-align: center;
+}
+
+#result{
+    display: flex;
+    justify-content: center;
+}
+
+.mb-3{
+
+    display: flex;
+    justify-content: center;
+}
+
+.form-control{
+    text-align: center;
+    width: 5em;
+}
+
+.wrong{
+    border: 1px solid #000;
+    background-color: hsl(1.07deg 68.29% 48.24%);
+    width: 250px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    color: whitesmoke;
+}
+
+.success{
+    border: 1px solid #000;
+    background-color: hsl(124 100% 31% / 1);
+    width: 250px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    color: whitesmoke;
+}
