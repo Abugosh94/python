@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Great Number Game</title>
+</head>
+<body>
+    <div class="container">
+        <section class="top">
+            <label>Your Gold:</label>
+            <input readonly type="number" class="form-control" placeholder="{{gold}}">
+            <!--NINJA BONUS: Add a reset button to restart the game-->
+            <!--SENSEI BONUS: Provide winning parameters to the game--for example, 
+            a user must obtain 500 gold in less than 15 moves. Only display the reset button once the user has won or lost.-->
+            {% if status == "lose" %}
+            <h1>You Have Lost...</h1>
+            <form action='/reset' method='post'>
+                <button type="submit" class="btn btn-danger">Reset</button>
+            </form>
+            {% elif status == "win" %}
+                <h1>YOU HAVE WON!</h1>
+            {% elif status == "none" %}
+            <h1>Obtain 500 gold in less than 15 moves!</h1>
+            {% endif %}
+        </section>
+        <section class="options">
+            <!--SENSEI BONUS: Only allow the user to guess up to 5 times. If they don't guess it on their 5th attempt, display a "You Lose" message and allow them to try again.-->
+            <div class="mb-3 option">
+                <h1>Farm</h1>
+                <h2>(earns 10-20 Gold)</h2>
+                <form action='/process_money' method='post'>
+                    <input type="hidden" name="which_form" value="farm"/>
+                    <button type="submit" class="btn btn-primary">Find Gold!</button>
+                </form>
+            </div>
+            <div class="mb-3 option">
+                <h1>Cave</h1>
+                <h2>(earns 5-10 Gold)</h2>
+                <form action='/process_money' method='post'>
+                    <input type="hidden" name="which_form" value="cave"/>
+                    <button type="submit" class="btn btn-primary">Find Gold!</button>
+                </form>
+            </div>
+            <div class="mb-3 option">
+                <h1>House</h1>
+                <h2>(earns 2-5 Gold)</h2>
+                <form action='/process_money' method='post'>
+                    <input type="hidden" name="which_form" value="house"/>
+                    <button type="submit" class="btn btn-primary">Find Gold!</button>
+                </form>
+            </div>
+            <div class="mb-3 option">
+                <h1>Casino</h1>
+                <h2>(earns/takes 0-50 Gold)</h2>
+                <form action='/process_money' method='post'>
+                    <input type="hidden" name="which_form" value="casino"/>
+                    <button type="submit" class="btn btn-primary">Find Gold!</button>
+                </form>
+            </div>
+        </section>
+        <!--NINJA BONUS: Display all the activities performed by the user in a log on the HTML, as shown in the wireframe-->
+        <section>
+            <div id="textarea" contenteditable="true">
+                {% for activity in activities %}
+                <!--NINJA BONUS: Have the activities be color-coded as shown above (+ money is green, - money is red)-->
+                    {% if "Earned" in activity or "earned" in activity %}
+                        <span class="green">{{activity}}</span>
+                    {% elif "lost" in activity %}
+                        <span class="red">{{activity}}</span>
+                    {% else %}
+                        {{activity}}
+                    {% endif %}
+                {% endfor %}
+        </div>
+        </section>
+    </div>
+</body>
+</html>

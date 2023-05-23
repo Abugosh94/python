@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.container{
+    margin-top: 1em;
+}
+
+.top{
+    display: flex;
+    margin-bottom: 1em;
+    justify-content: space-around;
+    width: 60em;
+}
+
+.options{
+    display: flex;
+    justify-content: space-between;
+    width: 1500px;
+}
+
+.btn-primary{
+    margin-top: 2em;
+}
+
+.mb-3{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid #000;
+    padding: 2em;
+    text-align: center;
+}
+
+.form-control{
+    text-align: left;
+    width: 10em;
+    height: 2em;
+}
+
+.actions{
+    resize: none;
+    width: 94em;
+    height: 10em;
+}
+
+.red{
+    color: red
+}
+
+.green{
+    color: green;
+}
+
+#textarea{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid gray;
+    font: medium;
+    height: 20em;
+    overflow: auto;
+    padding: 2px;
+    resize: none;
+    width: 94em;
+}
