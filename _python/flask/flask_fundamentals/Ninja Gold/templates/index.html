@@ -21,7 +21,7 @@
             <form action='/reset' method='post'>
                 <button type="submit" class="btn btn-danger">Reset</button>
             </form>
-            {% elif status == "win" %}
+            {% elif status > "win" %}
                 <h1>YOU HAVE WON!</h1>
             {% elif status == "none" %}
             <h1>Obtain 500 gold in less than 15 moves!</h1>

@@ -14,7 +14,7 @@ def default_page():
     
     if(session["moves"] == 15 and session["gold"] < 500 ):
         session["status"] = "lose"
-    elif(session["moves"] < 15 and session["gold"] >= 500):
+    elif(session["moves"] <= 15 and session["gold"] >= 500):
         session["status"] = "win"
 
     status = session["status"]
