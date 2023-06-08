@@ -5,10 +5,8 @@ def index(request):
     if "visits" not in request.session:
         request.session["visits"]=0
     if "count" in request.session:
-        print('count exists!')
         request.session["count"]+=1
     else:
-        print("key 'count' does NOT exist")
         request.session["count"]=1
 
     request.session["visits"] +=1 
