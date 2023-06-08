@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">  
+    <title>Great Number Game</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Great Number Game!</h1>
+        <h2>I am thinking of a number between 1 and 100</h2>
+        <h2>Take a Guess!</h2>
+        <!--NINJA BONUS: Display the results as shown in the wireframe above (i.e. with appropriate colors and positioning)-->
+        <div id="result">
+            <!--SENSEI BONUS: Only allow the user to guess up to 5 times. If they don't guess it on their 5th attempt, display a "You Lose" message and allow them to try again.-->
+            {% if request.session.attempt == 5%}
+            <div class="mb-3 wrong">
+                <h1>You Lose!</h1>
+                <form action='/clear' method='get'>
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-primary">Play Again!</button>
+                </form>
+            </div>
+            {% elif request.session.number == request.session.guess %}
+            <div class="mb-3 success">
+                <!--NINJA BONUS: Let the user know how many attempts they took before guessing the correct number-->
+                <h1>{{request.session.number}} was the number!</h1>
+                <h2>{{request.session.attempt}} Attempts</h2>
+                <form action='/clear' method='get'>
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-primary">Play Again!</button>
+                </form>
+            </div>
+            {% elif request.session.guess == 0 %}
+            {% elif request.session.number > request.session.guess%}
+            <div class="mb-3 wrong">
+                <h1>Too Low!</h1>
+            </div>
+            {% elif request.session.guess > request.session.number %}
+            <div class="mb-3 wrong">
+                <h1>Too High!</h1>
+            </div>
+            {% endif %}
+        </div>
+        {% if request.session.number != request.session.guess and 5 > request.session.attempt %}
+            <!--NINJA BONUS: Let the user know how many attempts they took before guessing the correct number-->
+            {% if request.session.attempt > 1 %}
+                <h2>{{request.session.attempt}} Attempts</h2>
+            {% else %}
+                <h2>{{request.session.attempt}} Attempt</h2>
+            {% endif %}
+        <form action='/guess' method='post'>
+            {% csrf_token %}
+            <div class="mb-3">
+                <input type='text' name='guess' class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        {% endif %}
+    </div>
+</body>
+</html>
