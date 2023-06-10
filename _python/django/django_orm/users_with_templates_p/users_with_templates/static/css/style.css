@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+form{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.form_head, .form_bot{
+    display: flex;
+    margin: 1em;
+    justify-content:space-evenly;
+}
+
+
+button, .btn-success{
+    width: 5em;
+    margin: auto;
+}
+
+h2{
+    text-align: center;
+}
