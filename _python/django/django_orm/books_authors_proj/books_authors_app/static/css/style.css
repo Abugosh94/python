@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    display: flex;
+    justify-content:center ;
+}
+
+form{
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+    width: 50em;
+}
+
+a>button, .btn-success{
+    width: 10em;
+    margin: 1em;
+}
+
+h2{
+    text-align: center;
+}
