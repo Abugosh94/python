@@ -45,7 +45,7 @@ def display_author(request,id):
 
 def process(request):
     if(request.POST["form_name"] == "book_form"):
-        new_book = Book(title= request.POST["title"])
+        new_book = Book(title= request.POST["title"], desc= request.POST["desc"])
         new_book.save()
         author = Author.objects.get(id=(int(request.POST["author_name"])))
         new_book.authors.add(author)
