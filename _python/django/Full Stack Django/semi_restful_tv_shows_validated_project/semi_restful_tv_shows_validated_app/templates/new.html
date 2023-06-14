@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <title>Users With Templates</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h2>Add a New Show</h2>      
+            <a href="/shows">Go Back</a>
+        </header>
+        <section class="form">
+            {% if messages %}
+                <ul class="messages">    
+                {% for message in messages %}    
+                    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+                {% endfor %}
+                </ul>
+            {% endif %}
+                <form action='create' method='post'>
+                    {% csrf_token %}
+                    <section class="form_head">
+                        <label>Title:</label>
+                        <input type="text" name="title" required>
+                    </section>
+                    <section class="form_mid">
+                        <label>Network:</label>
+                        <input type="text" name="network" required>
+                        <label>Release Date:</label>
+                        <input type="date" name="release_date" required>
+                    </section>
+                    <section class="form_bot">
+                        <label>Description:</label>
+                        <textarea name="desc"></textarea>
+                    </section>
+                    <button class="btn btn-success">Create</button>
+                </form>
+        </section>
+    </div>
+</body>
+</html>

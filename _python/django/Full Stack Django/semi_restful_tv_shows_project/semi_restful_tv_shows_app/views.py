@@ -38,13 +38,14 @@ def edit(request, id):
     return render(request, 'update.html', context)
 
 def update(request, id):
-        movie = Movie.objects.get(id=id)
-        movie.title= request.POST["title"] 
-        movie.desc= request.POST["desc"]
-        movie.network= request.POST["network"]
-        movie.release_date= request.POST["release_date"]
-        movie.save()
-        return redirect(f'/shows/{id}')
+    movie = Movie.objects.get(id=id)
+    movie.title= request.POST["title"] 
+    movie.desc= request.POST["desc"]
+    movie.network= request.POST["network"]
+    movie.release_date= request.POST["release_date"]
+    movie.save()
+    
+    return redirect(f'/shows/{id}')
 
 def destroy(request, id):
     Movie.objects.get(id=id).delete()
