@@ -16,7 +16,6 @@ def new(request):
 
 def create(request):
     errors = Movie.objects.basic_validator(request.POST)
-    print(errors)
     if len(errors) > 0:
         for key, value in errors.items():
             messages.error(request, value)
