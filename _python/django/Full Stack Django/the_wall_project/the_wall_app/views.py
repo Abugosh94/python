@@ -1,7 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib import messages
 from django.utils import timezone
-from datetime import datetime
 from the_wall_app.models import *
 from login_and_regestration_app.models import *
 
