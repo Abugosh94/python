@@ -36,7 +36,7 @@ def view(request, id):
 def edit(request, id):
     context = {
         "movie": Movie.objects.get(id=id),
-        "date": Movie.objects.get(id=id).release_date.strftime("%Y-%m-%d")
+        "date": Movie.objects.get(id=id).release_date.strftime("%Y-%m-%d"),
     }
 
     return render(request, 'update.html', context)

@@ -35,7 +35,8 @@
             {% for message in messages %}
                 <h4>{{ message.user.fname }} {{ message.user.lname }} - {{message.created_at}}</h4>
                 <p>{{ message.message }}</p>
-                {% if message.user.id == user.id %}
+                {{message.created_at|timesince:timenow}}
+                {% if message.user.id == user.id and message.deletable %}
                 <a href="wall/delete/{{message.id}}"><button class="btn btn-danger">Delete Message</button></a>
                 {% endif %}
                 <section class="comments">
