@@ -10,7 +10,6 @@ def wall(request):
         if request.session["status"] == "Logged In":
             for message in Message.objects.all():
                 if (timezone.now()- message.created_at).total_seconds()/60 > 30:
-                    print(message.deletable)
                     message.deletable = False
                     message.save()
             context = {
