@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    margin: 1em;
+}
+
+section{
+    margin: 1em;
+}
+
+.from_section{
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    margin: 1em;
+}
+
+.header-rightside{
+    display: flex;
+}
+
+.mid{
+    margin: 1em;
+    margin-bottom: 10em;
+}
+
+
+form{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.content{
+    display: flex;
+    margin: auto;
+    align-items: center;
+}
+
+textarea{
+    height: 8em;
+}
+
+
+a>button, .btn-success, .btn-primary{
+    width: 10em;
+    margin: 1em;
+    align-self: last baseline;
+}

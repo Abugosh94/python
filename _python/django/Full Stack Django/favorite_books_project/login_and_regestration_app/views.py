@@ -15,7 +15,7 @@ def success(request):
         context = {
             "user": User.objects.get(id=request.session['userid'])
         }
-        return redirect('/wall')
+        return redirect('/books')
     if request.session["status"] == "Registered":
         return render (request, 'success.html')
     return redirect("/")
