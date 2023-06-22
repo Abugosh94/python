@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-from django.utils import timezone
 from favorite_books_app.models import *
 from login_and_regestration_app.models import *
 
@@ -11,7 +10,6 @@ def books(request):
                 "logged_user": this_user,
                 "books": Book.objects.all,
                 "favorites": this_user.books.all(),
-                "timenow": timezone.now(),
             }
             return render(request, 'books.html', context)
     return redirect("/")
