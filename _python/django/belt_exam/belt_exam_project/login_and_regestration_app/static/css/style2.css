@@ -1,0 +1,67 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.loginreg, .container{
+    display:flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+}
+
+td{
+    text-align:left;
+}
+
+
+.form1, .form2{
+    border: 2px solid black;
+    padding: 0.5em;
+    margin: 0.5em;
+    width: 50%;
+    text-align: center;
+}
+
+td{
+    padding: 0.5em;
+}
+
+.form-table{
+    display: flex;
+    justify-content: center;
+}
+
+.errors{
+    margin:0px auto;
+    width:600px;
+    color:red;
+    text-align:left;
+}
+
+.success{
+    color: green !important;
+}
+
+.right{
+    text-align:center;
+}
+
+header{
+    margin-top: 1em;
+    text-align: center;
+}
+
+a>button, .btn-success, .btn-primary{
+    width: 10em;
+    margin: 1em;
+    align-self: center;
+    box-shadow: 3px 3px #000;
+}

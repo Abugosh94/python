@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    padding-left: 1em;
+    display: flex;
+    justify-content:space-between ;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+
+section>div>section{
+    margin-top: 1em;
+}
+
+.side1{
+    flex: 3;
+}
+
+.side2{
+    flex:1;
+}
+
+form{
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+    width: 50em;
+}
+
+a>button, .btn-success{
+    width: 10em;
+    margin: 1em;
+}
+
+section>textarea{
+    margin-top: 1em;
+    width: 100%;
+}
+
+.card{
+    width:380px;
+    border:none;
+    height:280px;
+}
+
+.ratings{
+    margin-right:10px;
+}
+
+.ratings i{
+    color:#cecece;
+    font-size:32px;
+}
+
+.rating-color{
+    color:#fbc634 !important;
+}
+
+.review-count{
+    font-weight:400;
+    margin-bottom:2px;
+    font-size:24px !important;
+}
+
+.small-ratings i{
+    color:#cecece;   
+}
+
+.review-stat{
+    font-weight:300;
+    font-size:18px;
+    margin-bottom:2px;
+}
+
+#textarea{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid gray;
+    font: medium;
+    height: 20em;
+    overflow: auto;
+    padding: 2px;
+    resize: none;
+    width: 25em;
+}

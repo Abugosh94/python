@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <title>Welcome</title>
+</head>
+<body>
+    <header>
+        {% if  request.session.status == "Registered"%}
+        <div style="text-align:right;"><a href="/" class="btn btn-primary mb-2">Go Back</a></div>
+        {% endif %}
+        {% if  request.session.status == "Logged In"%}
+        <div style="text-align:right;"><a href="/logout" class="btn btn-primary mb-2">logout</a></div>
+        {% endif %}
+    </header>
+    <div class="container">
+        {% if  request.session.status == "Logged In"%}
+        <h2>Success! Welcome, {{user.fname}} {{user.lname}}</h2>
+        {% endif %}
+        <h2 class="success">Successfully {{request.session.status}}</h2>
+    </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    padding-left: 1em;
+    display: flex;
+    justify-content:space-between ;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+
+section>div>section{
+    margin-top: 1em;
+}
+
+form{
+    border: 2px solid black;
+    padding: 0.5em;
+    margin: 0.5em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 50em;
+}
+
+.container{
+    display:flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+}
+
+a>button, .btn-success, .btn-primary{
+    width: 10em;
+    margin: 1em;
+    align-self: center;
+    box-shadow: 3px 3px #000;
+}
+
+.errors{
+    margin:0px auto;
+    width:600px;
+    color:red;
+    text-align:left;
+}
+
+.team_details{
+    margin: 3em 5em;
+}
