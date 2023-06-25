@@ -23,31 +23,31 @@
         <section class="side1">
             <h2>Recent Book Reviews:</h2>
             <div class="reviews">
-            {% for book in books %}
+            {% for review in reviews %}
                 <section>
-                    <a href="#">{{book.title}}</a>
+                    <a href="/books/{{review.book.id}}">{{review.book.title}}</a>
                     <div class="card p-3">
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="ratings">
-                                {% if book.review.rating == 5 %}
+                                {% if review.rating == 5 %}
                                 <i class="fa fa-star rating-color"></i>
                                 <i class="fa fa-star rating-color"></i>
                                 <i class="fa fa-star rating-color"></i>
                                 <i class="fa fa-star rating-color"></i>
                                 <i class="fa fa-star rating-color"></i>
-                                {% elif book.review.rating == 4 %}
+                                {% elif review.rating == 4 %}
                                 <i class="fa fa-star rating-color"></i>
                                 <i class="fa fa-star rating-color"></i>
                                 <i class="fa fa-star rating-color"></i>
                                 <i class="fa fa-star rating-color"></i>
                                 <i class="fa fa-star"></i>
-                                {% elif book.review.rating == 3 %}
+                                {% elif review.rating == 3 %}
                                 <i class="fa fa-star rating-color"></i>
                                 <i class="fa fa-star rating-color"></i>
                                 <i class="fa fa-star rating-color"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
-                                {% elif book.review.rating == 2 %}
+                                {% elif review.rating == 2 %}
                                 <i class="fa fa-star rating-color"></i>
                                 <i class="fa fa-star rating-color"></i>
                                 <i class="fa fa-star"></i>
@@ -63,17 +63,17 @@
                             </div>
                         </div>
                     </div>         
-                    <p><a>{{book.review.user.fname}}</a> says: {{book.review.description}}</p>
-                    <em>Posted on {{book.review.created_at}}</em>
+                    <p><a href="/users/{{review.user.id}}">{{review.user.fname}}</a> says: {{review.description}}</p>
+                    <em>Posted on {{review.book.created_at}}</em>
                 </section>
             {% endfor %}
             </div>
         </section>
         <section class="side2">
             <h2>Other Books with Reviews:</h2>
-            <div id="textarea" contenteditable="true">
+            <div id="textarea" contenteditable="false">
                 {% for book in other_books %}
-                    <a href="#">{{ book.title }}</a>
+                    <a href="/books/{{book.id}}">{{ book.title }}</a>
                 {% endfor %}
             </div>
         </section>

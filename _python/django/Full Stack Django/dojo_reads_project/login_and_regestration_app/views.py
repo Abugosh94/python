@@ -45,6 +45,18 @@ def login(request):
     request.session['incorrect'] = 'Please check your Email and Password'
     return redirect('/')
 
+def view_user(request, id):
+    this_user = User.objects.get(id=request.session["userid"])
+    view_user = User.objects.get(id=id)
+    reviews_number = len(this_user.reviews.all())
+    context = {
+        "logged_user": this_user,
+        "reviews": User.objects.get(id=id).reviews.all(),
+        "view_user": view_user,
+        "reviews_number": reviews_number,
+    }
+    return render(request, "display_user.html", context)
+
 def logout(request):
     request.session.clear()
     return redirect("/")

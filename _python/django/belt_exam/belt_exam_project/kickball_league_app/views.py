@@ -85,7 +85,7 @@ def update_team(request, id):
                 messages.error(request, value)
             for key, value in errors2.items():
                 messages.error(request, value)
-            return redirect (f'/teams/{id}')
+            return redirect (f'/teams/{id}/edit')
         else:
             this_team.update(name = request.POST["team_name"], skill_level= int(request.POST["skill_level"]), 
                             game_day= (request.POST["game_day"][0].upper()+request.POST["game_day"][1:].lower()))

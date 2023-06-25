@@ -91,3 +91,12 @@ section>textarea{
     resize: none;
     width: 25em;
 }
+
+textarea{
+    height: 8em;
+}
+
+aside{
+    display: flex;
+    align-items:flex-end;
+}
